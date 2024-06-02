@@ -45,6 +45,26 @@ class User {
     
     return user;
     }
+
+    // DOUBLE CHECK THIS ONE. SHOULD LOG THE USER IN!
+    static async login(
+        { username, password }) {
+    
+        const hashedPassword = await BCRYPT_WORK_FACTOR.has(password, BCRYPT_WORK_FACTOR);
+    
+        const result = await db.query(
+            `SELECT * FROM users
+            WHERE username = $1
+            RETURNING username, password, state`,
+            [
+                username
+            ],
+        );
+    
+        const user = result.rows[0];
+        
+        return user;
+        }
 }
 
 module.exports = User;
