@@ -4,7 +4,7 @@ CREATE TABLE "kinships" (
     "plural" varchar   NOT NULL,
     "population" int   NOT NULL,
     "creation_year" int   NOT NULL,
-    "private" boolean   NOT NULL,
+    "is_private" boolean   NOT NULL,
     CONSTRAINT "pk_kinships" PRIMARY KEY (
         "id"
     )
@@ -22,7 +22,7 @@ CREATE TABLE "images" (
     "id" int   NOT NULL,
     "name" varchar   NOT NULL,
     "url" varchar   NOT NULL,
-    "private" boolean   NOT NULL,
+    "is_private" boolean   NOT NULL,
     CONSTRAINT "pk_images" PRIMARY KEY (
         "id"
      )
@@ -39,7 +39,7 @@ CREATE TABLE "kinships_groups" (
 CREATE TABLE "groups" (
     "id" int   NOT NULL,
     "name" varchar   NOT NULL,
-    "private" boolean   NOT NULL,
+    "is_private" boolean   NOT NULL,
     CONSTRAINT "pk_groups" PRIMARY KEY (
         "id"
      )
@@ -56,7 +56,7 @@ CREATE TABLE "kinships_territories" (
 CREATE TABLE "territories" (
     "id" int   NOT NULL,
     "name" varchar   NOT NULL,
-    "private" boolean   NOT NULL,
+    "is_private" boolean   NOT NULL,
     CONSTRAINT "pk_territories" PRIMARY KEY (
         "id"
      )
@@ -74,7 +74,7 @@ CREATE TABLE "articles" (
     "id" int   NOT NULL,
     "title" varchar   NOT NULL,
     "text" text   NOT NULL,
-    "private" boolean   NOT NULL,
+    "is_private" boolean   NOT NULL,
     CONSTRAINT "pk_articles" PRIMARY KEY (
         "id"
      )

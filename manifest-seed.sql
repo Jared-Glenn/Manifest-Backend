@@ -8,7 +8,7 @@ VALUES (1,
         'Creator of Manifest',
         'admin');
 
-INSERT INTO kinships (id, name, plural, population, creation_year, private)
+INSERT INTO kinships (id, name, plural, population, creation_year, is_private)
 VALUES (1,
         'mugwump',
         'mugwumps',
@@ -46,33 +46,7 @@ VALUES (1,
         -1000,
         false);
 
-INSERT INTO images (id, name, url, private)
-VALUES (1,
-        'mugwump image',
-        'mugwump_img',
-        false),
-        (2,
-        'duskmott image',
-        'duskmott_img',
-        false),
-        (3,
-        'wudrigar image',
-        'wudrigar_img',
-        false),
-        (4,
-        'pardrin image',
-        'pardrin_img',
-        false),
-        (5,
-        'hangman image',
-        'hangman_img',
-        false),
-        (6,
-        'hokflatzul image',
-        'hokflatzul_img',
-        false);
-
-INSERT INTO groups (id, name, private)
+INSERT INTO groups (id, name, is_private)
 VALUES (1,
         'Mitipidi Tribe',
         false),
@@ -89,7 +63,7 @@ VALUES (1,
         'The Stirpec Church',
         false);
 
-INSERT INTO territories (id, name, private)
+INSERT INTO territories (id, name, is_private)
 VALUES (1,
         'Steps',
         false),
@@ -100,7 +74,7 @@ VALUES (1,
         'The United Allegheny Domains',
         false);
 
-INSERT INTO articles (id, title, text, private)
+INSERT INTO articles (id, title, text, is_private)
 VALUES (1,
         'Mugwump Introduction',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -189,6 +163,32 @@ VALUES (1,
         (4,
         1,
         'This ones my favorite!');
+
+INSERT INTO images (id, name, url, is_private)
+VALUES (1,
+        'mugwump image',
+        'mugwump_img',
+        false),
+        (2,
+        'duskmott image',
+        'duskmott_img',
+        false),
+        (3,
+        'wudrigar image',
+        'wudrigar_img',
+        false),
+        (4,
+        'pardrin image',
+        'pardrin_img',
+        false),
+        (5,
+        'hangman image',
+        'hangman_img',
+        false),
+        (6,
+        'hokflatzul image',
+        'hokflatzul_img',
+        false);
         
 INSERT INTO kinships_images (kinship_id, image_id)
 VALUES (1,

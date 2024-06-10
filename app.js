@@ -5,11 +5,14 @@ const cors = require("cors");
 
 const { NotFoundError } = require("./expressError");
 
+const kinshipRoutes = require("./routes/kinships");
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+app.use("/kinships", kinshipRoutes);
 
 
 app.use(function (req, res, next) {

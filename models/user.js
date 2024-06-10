@@ -46,7 +46,12 @@ class User {
     return user;
     }
 
-    // DOUBLE CHECK THIS ONE. SHOULD LOG THE USER IN!
+    // Logs user in.
+
+    // Data should include:
+    //     {username, password} => {username, password, state}
+
+    // Throws Invalid username or password when invalid.
     static async login(
         { username, password }) {
     
@@ -63,7 +68,15 @@ class User {
     
         const user = result.rows[0];
         
-        return user;
+        if (user) {
+            const isValid = await bcrypt.compare(hashedPassword, user.password);
+            if (isValid === true) {
+                delete user.password;
+                return user;
+            }
+        }
+
+        throw new UnauthorizedError("Invalid username or password");
         }
 }
 
